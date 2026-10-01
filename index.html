@@ -1,12 +1,468 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-Fossil
-<title>
-Jayashri and ABI welcome you!!!
-</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StyleCraft - Cloth Designing</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #fff8f5;
+            color: #333;
+        }
+
+        /* Navigation */
+        nav {
+            background: #3b1f2b;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+        }
+
+        nav h1 {
+            color: #ffb6c1;
+            font-size: 28px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        nav ul li a:hover {
+            color: #ffb6c1;
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 550px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 60px 8%;
+            background: linear-gradient(120deg, #ffe5ec, #fff8f5);
+        }
+
+        .hero-text {
+            max-width: 550px;
+        }
+
+        .hero-text h2 {
+            font-size: 55px;
+            color: #3b1f2b;
+            margin-bottom: 20px;
+        }
+
+        .hero-text p {
+            font-size: 19px;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #d94f70;
+            color: white;
+            padding: 14px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background: #a83250;
+        }
+
+        .fashion-image {
+            width: 400px;
+            height: 450px;
+            border-radius: 200px 200px 20px 20px;
+            background: linear-gradient(135deg, #d94f70, #f7a1b5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 70px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        /* Sections */
+        section {
+            padding: 70px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 38px;
+            color: #3b1f2b;
+        }
+
+        .section-title p {
+            margin-top: 10px;
+            color: #777;
+        }
+
+        /* Categories */
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .category {
+            background: white;
+            padding: 35px 20px;
+            text-align: center;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .category:hover {
+            transform: translateY(-10px);
+        }
+
+        .category .icon {
+            font-size: 55px;
+            margin-bottom: 15px;
+        }
+
+        .category h3 {
+            color: #3b1f2b;
+            margin-bottom: 10px;
+        }
+
+        /* Gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .design {
+            height: 330px;
+            border-radius: 15px;
+            display: flex;
+            align-items: flex-end;
+            padding: 25px;
+            color: white;
+            font-size: 22px;
+            font-weight: bold;
+            overflow: hidden;
+        }
+
+        .design:nth-child(1) {
+            background: linear-gradient(135deg, #582c4d, #e89aaa);
+        }
+
+        .design:nth-child(2) {
+            background: linear-gradient(135deg, #172b4d, #7194c5);
+        }
+
+        .design:nth-child(3) {
+            background: linear-gradient(135deg, #8c4a2f, #e9a875);
+        }
+
+        .design:nth-child(4) {
+            background: linear-gradient(135deg, #274d3c, #75a88c);
+        }
+
+        .design:nth-child(5) {
+            background: linear-gradient(135deg, #4b306a, #b38bd4);
+        }
+
+        .design:nth-child(6) {
+            background: linear-gradient(135deg, #333, #aaa);
+        }
+
+        /* About */
+        .about {
+            background: #3b1f2b;
+            color: white;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-size: 38px;
+            margin-bottom: 20px;
+        }
+
+        .about p {
+            max-width: 750px;
+            margin: auto;
+            line-height: 1.8;
+            color: #eee;
+        }
+
+        /* Contact */
+        .contact-form {
+            max-width: 650px;
+            margin: auto;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        .contact-form textarea {
+            height: 150px;
+            resize: none;
+        }
+
+        .contact-form button {
+            width: 100%;
+            padding: 15px;
+            background: #d94f70;
+            border: none;
+            color: white;
+            font-size: 17px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background: #a83250;
+        }
+
+        /* Footer */
+        footer {
+            background: #24131b;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .fashion-image {
+                margin-top: 40px;
+                width: 300px;
+                height: 350px;
+            }
+
+            .categories {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+            }
+
+            .hero-text h2 {
+                font-size: 40px;
+            }
+
+            .categories,
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
+
 <body>
-<h1> Jayashri AI DS & ABI welocmes you to her web page!!!</h1>
-<marquee>Jayashri & Abi</marquee>
+
+    <!-- Navigation -->
+    <nav>
+        <h1>StyleCraft</h1>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#categories">Categories</a></li>
+            <li><a href="#designs">Designs</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+
+        <div class="hero-text">
+            <h2>Design Your Own Style</h2>
+
+            <p>
+                Welcome to StyleCraft, a creative space for modern
+                clothing and fashion design. Explore beautiful designs,
+                discover new trends, and create your own unique style.
+            </p>
+
+            <a href="#designs" class="btn">Explore Designs</a>
+        </div>
+
+        <div class="fashion-image">
+            👗
+        </div>
+
+    </section>
+
+
+    <!-- Categories -->
+    <section id="categories">
+
+        <div class="section-title">
+            <h2>Our Collections</h2>
+            <p>Explore our clothing design categories</p>
+        </div>
+
+        <div class="categories">
+
+            <div class="category">
+                <div class="icon">👗</div>
+                <h3>Dresses</h3>
+                <p>Elegant and modern dress designs.</p>
+            </div>
+
+            <div class="category">
+                <div class="icon">👔</div>
+                <h3>Formal Wear</h3>
+                <p>Stylish clothing for professional occasions.</p>
+            </div>
+
+            <div class="category">
+                <div class="icon">👕</div>
+                <h3>Casual Wear</h3>
+                <p>Comfortable and trendy everyday outfits.</p>
+            </div>
+
+            <div class="category">
+                <div class="icon">🧥</div>
+                <h3>Jackets</h3>
+                <p>Creative jacket designs for every season.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Design Gallery -->
+    <section id="designs">
+
+        <div class="section-title">
+            <h2>Featured Designs</h2>
+            <p>Some of our latest fashion concepts</p>
+        </div>
+
+        <div class="gallery">
+
+            <div class="design">
+                <span>Elegant Evening Dress</span>
+            </div>
+
+            <div class="design">
+                <span>Modern Blue Collection</span>
+            </div>
+
+            <div class="design">
+                <span>Classic Brown Style</span>
+            </div>
+
+            <div class="design">
+                <span>Green Fashion</span>
+            </div>
+
+            <div class="design">
+                <span>Purple Designer Wear</span>
+            </div>
+
+            <div class="design">
+                <span>Urban Collection</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- About -->
+    <section class="about" id="about">
+
+        <h2>About StyleCraft</h2>
+
+        <p>
+            StyleCraft is a clothing design platform created for people
+            who love fashion and creativity. Our goal is to combine
+            traditional ideas with modern fashion trends and help
+            everyone express their personality through clothing.
+        </p>
+
+    </section>
+
+
+    <!-- Contact -->
+    <section id="contact">
+
+        <div class="section-title">
+            <h2>Contact Us</h2>
+            <p>Have a design idea? Tell us about it!</p>
+        </div>
+
+        <form class="contact-form">
+
+            <input type="text" placeholder="Your Name" required>
+
+            <input type="email" placeholder="Your Email" required>
+
+            <input type="text" placeholder="Design Type">
+
+            <textarea placeholder="Describe your clothing design..."></textarea>
+
+            <button type="submit">Send Design Request</button>
+
+        </form>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 StyleCraft | Cloth Designing Website</p>
+    </footer>
+
 </body>
 </html>
